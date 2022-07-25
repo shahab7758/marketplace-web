@@ -5,7 +5,9 @@ import { ItemFilters, ItemResponse } from './types'
 
 class ItemAPI extends BaseAPI {
   fetch = async (filters: ItemFilters = {}): Promise<ItemResponse> => {
+    // @ts-ignore:next-line
     const queryParams = this.buildItemsQueryString(filters)
+
     return this.request('get', `/items?${queryParams}`)
   }
 

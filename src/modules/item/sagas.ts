@@ -29,7 +29,7 @@ export function* itemSaga() {
 function* handleFetchItemsRequest(action: FetchItemsRequestAction) {
   const { filters } = action.payload
   try {
-    const { data, total }: { data: Item[]; total: number } = yield call(
+    const { data, total }: { data: any; total: number } = yield call(
       [itemAPI, 'fetch'],
       filters
     )
